@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Three Columns of Checklists</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 1.2rem;
+      }
+
+      .checklist-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 40px;
+      }
+
+      h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(236, 213, 66);
+        height: 96px;
+      }
+
+      h3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .checklist {
+        width: 30%;
+        margin-bottom: 10px;
+        padding: 20px;
+        border: 2px solid rgb(7, 7, 77);
+        border-radius: 30px;
+      }
+
+      /* .checklist h3 {
+            margin: 0 0 5px 0;
+        } */
+
+      .checklist ul {
+        list-style: none;
+        /* margin: 0;
+            padding: 0; */
+      }
+
+      .checklist li {
+        margin-bottom: 5px;
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+
+      .checklist input[type="checkbox"] {
+        margin-right: 15px;
+      }
+
+      .predict {
+        align-items: center;
+        padding-bottom: 30px;
+      }
+
+      button {
+        width: 250px;
+        height: 50px;
+        margin-left: 43%;
+        margin-bottom: 50px;
+        background-color: rgb(236, 213, 66);
+        border: 2px solid rgb(7, 7, 77);
+        border-radius: 20px;
+      }
+      button:hover {
+        background-color: rgb(243, 242, 217);
+      }
+
+      .predict1 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .predict1 div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Disease prediction</h1>
+    <h3>Please select atleast 1 and upto 17 diseases from the list below</h3>
+    <form>
+      <div class="checklist-container">
+        <div class="checklist">
+          <ul>
+            <li>
+              <input type="checkbox" id="item1" name="item1" value="1" />
+              Itching
+            </li>
+            <li>
+              <input type="checkbox" id="item2" name="item2" value="2" /> Skin
+              Rash
+            </li>
+            <li>
+              <input type="checkbox" id="item3" name="item3" value="3" />
+              Continuous Sneezing
+            </li>
+            <li>
+              <input type="checkbox" id="item4" name="item4" value="4" />
+              Shivering
+            </li>
+            <li>
+              <input type="checkbox" id="item5" name="item5" value="5" />
+              Stomach Pain
+            </li>
+            <li>
+              <input type="checkbox" id="item6" name="item6" value="6" />
+              Acidity
+            </li>
+            <li>
+              <input type="checkbox" id="item7" name="item7" value="7" />
+              vomiting
+            </li>
+            <li>
+              <input type="checkbox" id="item8" name="item8" value="8" />
+              Indigestion
+            </li>
+            <li>
+              <input type="checkbox" id="item9" name="item9" value="9" />
+              Muscle Wasting
+            </li>
+            <li>
+              <input type="checkbox" id="item10" name="item10" value="10" />
+              Patches in Throat
+            </li>
+            <li>
+              <input type="checkbox" id="item11" name="item11" value="11" />
+              fatigue
+            </li>
+            <li>
+              <input type="checkbox" id="item12" name="item12" value="12" />
+              weight loss
+            </li>
+            <li>
+              <input type="checkbox" id="item13" name="item13" value="13" />
+              Sunken Eyes
+            </li>
+            <li>
+              <input type="checkbox" id="item14" name="item14" value="14" />
+              Cough
+            </li>
+            <li>
+              <input type="checkbox" id="item15" name="item15" value="15" />
+              Headache
+            </li>
+            <li>
+              <input type="checkbox" id="item16" name="item16" value="16" />
+              chest pain
+            </li>
+            <li>
+              <input type="checkbox" id="item17" name="item17" value="17" />
+              back pain
+            </li>
+            <li>
+              <input type="checkbox" id="item18" name="item18" value="18" />
+              weakness in limbs
+            </li>
+            <li>
+              <input type="checkbox" id="item19" name="item19" value="19" />
+              Chills
+            </li>
+            <li>
+              <input type="checkbox" id="item20" name="item20" value="20" />
+              Joint Pain
+            </li>
+            <li>
+              <input type="checkbox" id="item21" name="item21" value="21" />
+              Yellowish Skin
+            </li>
+            <li>
+              <input type="checkbox" id="item22" name="item22" value="22" />
+              Constipation
+            </li>
+            <li>
+              <input type="checkbox" id="item23" name="item23" value="23" />
+              Pain During Bowel Movement
+            </li>
+            <li>
+              <input type="checkbox" id="item24" name="item24" value="24" />
+              Breathlessness
+            </li>
+            <li>
+              <input type="checkbox" id="item25" name="item25" value="25" />
+              Cramps
+            </li>
+            <li>
+              <input type="checkbox" id="item26" name="item26" value="26" />
+              Weight Gain
+            </li>
+            <li>
+              <input type="checkbox" id="item27" name="item27" value="27" />
+              Mood Swings
+            </li>
+            <li>
+              <input type="checkbox" id="item28" name="item28" value="28" />
+              Neck Pain
+            </li>
+            <li>
+              <input type="checkbox" id="item29" name="item29" value="29" />
+              Muscle Weakness
+            </li>
+            <li>
+              <input type="checkbox" id="item30" name="item30" value="30" />
+              Stiff Neck
+            </li>
+            <li>
+              <input type="checkbox" id="item31" name="item31" value="31" /> Pus
+              Filled Pimples
+            </li>
+            <li>
+              <input type="checkbox" id="item32" name="item32" value="32" />
+              Burning Micturition
+            </li>
+            <li>
+              <input type="checkbox" id="item33" name="item33" value="33" />
+              Bladder Discomfort
+            </li>
+            <li>
+              <input type="checkbox" id="item34" name="item34" value="34" />
+              High Fever
+            </li>
+            <li>
+              <input type="checkbox" id="item35" name="item35" value="35" />
+              Nodal Skin Eruptions
+            </li>
+            <li>
+              <input type="checkbox" id="item36" name="item36" value="36" />
+              Ulcers On Tongue
+            </li>
+            <li>
+              <input type="checkbox" id="item37" name="item37" value="37" />
+              Loss Of Appetite
+            </li>
+            <li>
+              <input type="checkbox" id="item38" name="item38" value="38" />
+              Restlessness
+            </li>
+            <li>
+              <input type="checkbox" id="item39" name="item39" value="39" />
+              Dehydration
+            </li>
+            <li>
+              <input type="checkbox" id="item40" name="item40" value="40" />
+              Dizziness
+            </li>
+            <li>
+              <input type="checkbox" id="item41" name="item41" value="41" />
+              Weakness of one body side
+            </li>
+            <li>
+              <input type="checkbox" id="item42" name="item42" value="42" />
+              Lethargy
+            </li>
+            <li>
+              <input type="checkbox" id="item43" name="item43" value="43" />
+              Nausea
+            </li>
+            <li>
+              <input type="checkbox" id="item44" name="item44" value="44" />
+              Abdominal Pain
+            </li>
+          </ul>
+        </div>
+        <div class="checklist">
+          <!-- <h3>Checklist 2</h3> -->
+          <ul>
+            <li>
+              <input type="checkbox" id="item45" name="item45" value="45" />
+              Pain in anal region
+            </li>
+            <li>
+              <input type="checkbox" id="item46" name="item46" value="46" />
+              Sweating
+            </li>
+            <li>
+              <input type="checkbox" id="item47" name="item47" value="47" />
+              Bruising
+            </li>
+            <li>
+              <input type="checkbox" id="item48" name="item48" value="48" />
+              Cold hands and feets
+            </li>
+            <li>
+              <input type="checkbox" id="item49" name="item49" value="49" />
+              Anxiety
+            </li>
+            <li>
+              <input type="checkbox" id="item50" name="item50" value="50" />
+              Knee pain
+            </li>
+            <li>
+              <input type="checkbox" id="item51" name="item51" value="51" />
+              Swelling joints
+            </li>
+            <li>
+              <input type="checkbox" id="item52" name="item52" value="52" />
+              blackheads
+            </li>
+            <li>
+              <input type="checkbox" id="item53" name="item53" value="53" />
+              Foul smell of urine
+            </li>
+            <li>
+              <input type="checkbox" id="item54" name="item54" value="54" />
+              Skin peeling
+            </li>
+            <li>
+              <input type="checkbox" id="item55" name="item55" value="55" />
+              Blister
+            </li>
+            <li>
+              <input type="checkbox" id="item56" name="item56" value="56" />
+              Dischromic patches
+            </li>
+            <li>
+              <input type="checkbox" id="item57" name="item57" value="57" />
+              Watering from eye
+            </li>
+            <li>
+              <input type="checkbox" id="item58" name="item58" value="58" />
+              Extra marital contacts
+            </li>
+            <li>
+              <input type="checkbox" id="item59" name="item59" value="59" />
+              Diarrhoea
+            </li>
+            <li>
+              <input type="checkbox" id="item60" name="item60" value="60" />
+              Loss of balance
+            </li>
+            <li>
+              <input type="checkbox" id="item61" name="item61" value="61" />
+              Blurred and distorted vision
+            </li>
+            <li>
+              <input type="checkbox" id="item62" name="item62" value="62" />
+              Altered sensorium
+            </li>
+            <li>
+              <input type="checkbox" id="item63" name="item63" value="63" />
+              Dark Urine
+            </li>
+            <li>
+              <input type="checkbox" id="item64" name="item64" value="64" />
+              Swelling of stomach
+            </li>
+            <li>
+              <input type="checkbox" id="item65" name="item65" value="65" />
+              Bloody stool
+            </li>
+            <li>
+              <input type="checkbox" id="item66" name="item66" value="66" />
+              Obesity
+            </li>
+            <li>
+              <input type="checkbox" id="item67" name="item67" value="67" /> Hip
+              joint pain
+            </li>
+            <li>
+              <input type="checkbox" id="item68" name="item68" value="68" />
+              Movement stiffness
+            </li>
+            <li>
+              <input type="checkbox" id="item69" name="item69" value="69" />
+              Spinning movement
+            </li>
+            <li>
+              <input type="checkbox" id="item70" name="item70" value="70" />
+              Scurring
+            </li>
+            <li>
+              <input type="checkbox" id="item71" name="item71" value="71" />
+              Continious feel of urine
+            </li>
+            <li>
+              <input type="checkbox" id="item72" name="item72" value="72" />
+              Silver like dusting
+            </li>
+            <li>
+              <input type="checkbox" id="item73" name="item73" value="73" /> Red
+              sore around nose
+            </li>
+            <li>
+              <input type="checkbox" id="item75" name="item75" value="75" />
+              Spotting urination
+            </li>
+            <li>
+              <input type="checkbox" id="item76" name="item76" value="76" />
+              Passage of gas
+            </li>
+            <li>
+              <input type="checkbox" id="item77" name="item77" value="77" />
+              Irregular sugar level
+            </li>
+            <li>
+              <input type="checkbox" id="item78" name="item78" value="78" />
+              Family history
+            </li>
+            <li>
+              <input type="checkbox" id="item79" name="item79" value="79" />
+              Lack of concentration
+            </li>
+            <li>
+              <input type="checkbox" id="item80" name="item80" value="80" />
+              Excessive hunger
+            </li>
+            <li>
+              <input type="checkbox" id="item81" name="item81" value="81" />
+              Yellowing of eye
+            </li>
+            <li>
+              <input type="checkbox" id="item82" name="item82" value="82" />
+              Distention of abdomen
+            </li>
+            <li>
+              <input type="checkbox" id="item83" name="item83" value="83" />
+              Irritation in anus
+            </li>
+            <li>
+              <input type="checkbox" id="item84" name="item84" value="84" />
+              Swollen leg
+            </li>
+            <li>
+              <input type="checkbox" id="item85" name="item85" value="85" />
+              Painful walking
+            </li>
+            <li>
+              <input type="checkbox" id="item86" name="item86" value="86" />
+              Small dents in nail
+            </li>
+            <li>
+              <input type="checkbox" id="item87" name="item87" value="87" />
+              Yellow crust ooze
+            </li>
+            <li>
+              <input type="checkbox" id="item88" name="item88" value="88" />
+              Internal itching
+            </li>
+          </ul>
+        </div>
+        <div class="checklist">
+          <!-- <h3>Checklist 3</h3> -->
+          <ul>
+            <li>
+              <input type="checkbox" id="item89" name="item89" value="89" />
+              Mucoid sputum
+            </li>
+            <li>
+              <input type="checkbox" id="item90" name="item90" value="90" />
+              History of alcohol consumption
+            </li>
+            <li>
+              <input type="checkbox" id="item91" name="item91" value="91" />
+              Swollen blood vessels
+            </li>
+            <li>
+              <input type="checkbox" id="item92" name="item92" value="92" />
+              Unsteadiness
+            </li>
+            <li>
+              <input type="checkbox" id="item93" name="item93" value="93" />
+              Inflammatory nails
+            </li>
+            <li>
+              <input type="checkbox" id="item94" name="item94" value="94" />
+              Depression
+            </li>
+            <li>
+              <input type="checkbox" id="item95" name="item95" value="95" />
+              Fluid overload
+            </li>
+            <li>
+              <input type="checkbox" id="item96" name="item96" value="96" />
+              Swelled lymph node
+            </li>
+            <li>
+              <input type="checkbox" id="item97" name="item97" value="97" />
+              Malasie
+            </li>
+            <li>
+              <input type="checkbox" id="item98" name="item98" value="98" />
+              Prominent veins on calf
+            </li>
+            <li>
+              <input type="checkbox" id="item99" name="item99" value="99" />
+              Puffy face and eyes
+            </li>
+            <li>
+              <input type="checkbox" id="item100" name="item100" value="100" />
+              Fast heart rate
+            </li>
+            <li>
+              <input type="checkbox" id="item101" name="item101" value="101" />
+              Irritability
+            </li>
+            <li>
+              <input type="checkbox" id="item102" name="item102" value="102" />
+              Muscle pain
+            </li>
+            <li>
+              <input type="checkbox" id="item103" name="item103" value="103" />
+              Mild Fever
+            </li>
+            <li>
+              <input type="checkbox" id="item104" name="item104" value="104" />
+              Yellow urine
+            </li>
+            <li>
+              <input type="checkbox" id="item105" name="item105" value="105" />
+              Phlegm
+            </li>
+            <li>
+              <input type="checkbox" id="item106" name="item106" value="106" />
+              Enlarged thyroid
+            </li>
+            <li>
+              <input type="checkbox" id="item107" name="item107" value="107" />
+              Increased appetite
+            </li>
+            <li>
+              <input type="checkbox" id="item108" name="item108" value="108" />
+              Visual disturbance
+            </li>
+            <li>
+              <input type="checkbox" id="item109" name="item109" value="109" />
+              Brittle nails
+            </li>
+            <li>
+              <input type="checkbox" id="item110" name="item110" value="110" />
+              Drying and tingling lips
+            </li>
+            <li>
+              <input type="checkbox" id="item111" name="item111" value="111" />
+              Polyuria
+            </li>
+            <li>
+              <input type="checkbox" id="item112" name="item112" value="112" />
+              Pain behind the eye
+            </li>
+            <li>
+              <input type="checkbox" id="item113" name="item113" value="113" />
+              toxic look (typhos)
+            </li>
+            <li>
+              <input type="checkbox" id="item114" name="item114" value="114" />
+              throat irritation
+            </li>
+            <li>
+              <input type="checkbox" id="item115" name="item115" value="115" />
+              swollen extremeties
+            </li>
+            <li>
+              <input type="checkbox" id="item116" name="item116" value="116" />
+              slurred speech
+            </li>
+            <li>
+              <input type="checkbox" id="item117" name="item117" value="117" />
+              red spots over body
+            </li>
+            <li>
+              <input type="checkbox" id="item118" name="item118" value="118" />
+              belly pain
+            </li>
+            <li>
+              <input type="checkbox" id="item119" name="item119" value="119" />
+              receiving blood transfusion
+            </li>
+            <li>
+              <input type="checkbox" id="item120" name="item120" value="120" />
+              acute liver failure
+            </li>
+            <li>
+              <input type="checkbox" id="item121" name="item121" value="121" />
+              redness of eyes
+            </li>
+            <li>
+              <input type="checkbox" id="item122" name="item122" value="122" />
+              rusty sputum
+            </li>
+            <li>
+              <input type="checkbox" id="item123" name="item123" value="123" />
+              abnormal menstruation
+            </li>
+            <li>
+              <input type="checkbox" id="item124" name="item124" value="124" />
+              receiving unsterile injections
+            </li>
+            <li>
+              <input type="checkbox" id="item125" name="item125" value="125" />
+              coma
+            </li>
+            <li>
+              <input type="checkbox" id="item126" name="item126" value="126" />
+              sinus pressure
+            </li>
+            <li>
+              <input type="checkbox" id="item127" name="item127" value="127" />
+              palpitations
+            </li>
+            <li>
+              <input type="checkbox" id="item128" name="item128" value="128" />
+              stomach bleeding
+            </li>
+            <li>
+              <input type="checkbox" id="item129" name="item129" value="129" />
+              runny nose
+            </li>
+            <li>
+              <input type="checkbox" id="item130" name="item130" value="130" />
+              congestion
+            </li>
+            <li>
+              <input type="checkbox" id="item131" name="item131" value="131" />
+              blood in sputum
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="predict1">
+      <span>
+        Predicted Disease
+        <p id="disease"></p>
+      </span>
+    </div>
+
+    <script>
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", handleCheckboxChange);
+      });
+
+      function handleCheckboxChange() {
+        const checkedBoxes = document.querySelectorAll(
+          'input[type="checkbox"]:checked',
+        );
+
+        if (checkedBoxes.length < 1) {
+          alert("Please select at least one checkbox.");
+        } else if (checkedBoxes.length > 17) {
+          alert("You can only select a maximum of 17 checkboxes.");
+          // Uncheck the last checked checkbox
+          checkedBoxes[checkedBoxes.length - 1].checked = false;
+        }
+      }
+
+      let symptoms = [];
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        document.querySelectorAll('[type="checkbox"]').forEach((item) => {
+          if (item.checked === true) {
+            symptoms.push(item.value);
+          }
+        });
+
+        fetch("/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ symptoms: symptoms }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("disease").textContent =
+              data.disease_prediction;
+          });
+      });
+    </script>
+  </body>
+</html>
